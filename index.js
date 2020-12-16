@@ -3,6 +3,13 @@ const app = express();
 
 const bodyParser = require("body-parser");
 
+const conexao = require("./database/database");
+
+conexao
+  .authenticate()
+  .then(() => console.log("Conectado com banco de dados"))
+  .catch((err) => console.log(err));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
@@ -19,8 +26,6 @@ app.get("/perguntar", (req, res) => {
 app.post("/salvarpergunta", (req, res) => {
   let titulo = req.body.titulo;
   let descricao = req.body.descricao;
-
-  res.send("Formulario: " + titulo + " " + descricao);
 });
 
 const port = process.env.PORT || 8080;
