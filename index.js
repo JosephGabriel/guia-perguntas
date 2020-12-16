@@ -17,9 +17,11 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  perguntas.findAll({ raw: true }).then((perguntas) => {
-    res.render("index", { perguntas: perguntas });
-  });
+  perguntas
+    .findAll({ raw: true, order: [["id", "DESC"]] })
+    .then((perguntas) => {
+      res.render("index", { perguntas: perguntas });
+    });
 });
 
 app.get("/perguntar", (req, res) => {
