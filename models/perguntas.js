@@ -15,3 +15,5 @@ const perguntas = conexao.define("perguntas", {
 perguntas.sync({ force: false }).then(() => {
   console.log("Tabela de perguntas sincronizada");
 });
+
+module.exports = perguntas;

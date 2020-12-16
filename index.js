@@ -27,6 +27,15 @@ app.get("/perguntar", (req, res) => {
 app.post("/salvarpergunta", (req, res) => {
   let titulo = req.body.titulo;
   let descricao = req.body.descricao;
+
+  perguntas
+    .create({
+      titulo: titulo,
+      descricao: descricao,
+    })
+    .then(() => {
+      res.redirect("/");
+    });
 });
 
 const port = process.env.PORT || 8080;
