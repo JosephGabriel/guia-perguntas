@@ -43,6 +43,20 @@ app.post("/salvarpergunta", (req, res) => {
     });
 });
 
+app.post("/responder", (req, res) => {
+  let corpo = req.body.corpo;
+  let perguntaId = req.body.pergunta;
+
+  respostas
+    .create({
+      corpo: corpo,
+      perguntaId: perguntaId,
+    })
+    .then(() => {
+      res.redirect("/pergunta/" + perguntaId);
+    });
+});
+
 app.get("/pergunta/:id", (req, res) => {
   let id = req.params.id;
 
@@ -52,7 +66,17 @@ app.get("/pergunta/:id", (req, res) => {
     })
     .then((pergunta) => {
       if (pergunta != undefined) {
-        res.render("pergunta", { pergunta: pergunta });
+        respostas
+          .findAll({
+            where: { perguntaId: pergunta.id },
+            order: [["id", "desc"]],
+          })
+          .then((respostas) => {
+            res.render("pergunta", {
+              pergunta: pergunta,
+              respostas: respostas,
+            });
+          });
       } else {
         res.redirect("/");
       }

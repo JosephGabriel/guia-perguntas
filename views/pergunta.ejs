@@ -3,7 +3,7 @@
     <body>
         <%- include("partials/navbar") %>
 
-            <div class="container mt-5">
+            <div class="container my-5">
                 <div class="card">
                     <div class="card-header bg-dark text-white">
                         <h2>
@@ -19,11 +19,21 @@
                                 <label for="corpo">Resposta:</label>
                                 <textarea name="corpo" class="form-control"></textarea>
                             </div>
-                            <input type="hidden" value=" <%= pergunta.id %>">
+                            <input name="pergunta" type="hidden" value="<%= pergunta.id %>">
                             <button class="btn btn-outline-dark mt-2">Responder</button>
                         </form>
                     </div>
                 </div>
+            </div>
+            <div class="container">
+                <h2>Respostas</h2>
+                <% respostas.forEach(resposta=> { %>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <%= resposta.corpo %>
+                        </div>
+                    </div>
+                    <% }) %>
             </div>
     </body>
     <%- include("partials/footer") %>
