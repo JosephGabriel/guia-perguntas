@@ -1,0 +1,26 @@
+{
+  "name": "guia-perguntas",
+  "version": "1.0.0",
+  "description": "Uma plataforma anonima de perguntas e respostas",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosephGabriel/guia-perguntas.git"
+  },
+  "author": "Joseph Gabriel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosephGabriel/guia-perguntas/issues"
+  },
+  "homepage": "https://github.com/JosephGabriel/guia-perguntas#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}
