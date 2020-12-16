@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 
 const conexao = require("./database/database");
+const perguntas = require("./models/perguntas");
 
 conexao
   .authenticate()
