@@ -1,0 +1,22 @@
+<%- include("partials/head") %>
+
+    <body>
+        <%- include("partials/navbar") %>
+
+            <div class="container mt-5">
+                <div class="card">
+                    <div class="card-header bg-dark">
+                        <h2 class="text-white">
+                            <%= pergunta.titulo %>
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <h4>
+                            <%= pergunta.descricao %>
+                        </h4>
+                        <button class="btn btn-outline-dark mt-2">Responder</button>
+                    </div>
+                </div>
+            </div>
+    </body>
+    <%- include("partials/footer") %>

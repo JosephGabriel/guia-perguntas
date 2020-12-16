@@ -4,6 +4,9 @@
         <%- include("partials/navbar") %>
 
             <div class="container mt-5 ">
+                <h1>Perguntas</h1>
+                <a href="/perguntar" class="btn btn-dark mb-0">Perguntar</a>
+                <hr class="mb-5">
                 <div class="row">
                     <% perguntas.forEach(pergunta=> { %>
                         <div class="col-3">
@@ -17,7 +20,7 @@
                                     <p>
                                         <%= pergunta.descricao %>
                                     </p>
-                                    <button class="btn btn-outline-dark">Responder</button>
+                                    <a href="/pergunta/<%= pergunta.id %> " class="btn btn-outline-dark">Ver Mais</a>
                                 </div>
                             </div>
                         </div>

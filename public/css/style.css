@@ -1,13 +1,13 @@
-.card {
+.col-3 .card {
   min-height: 300px;
 }
 
-.card-header {
+.col-3 .card-header {
   min-height: 100px;
   display: flex;
   align-items: center;
 }
-.card-body {
+.col-3 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
